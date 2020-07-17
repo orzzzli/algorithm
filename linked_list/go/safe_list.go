@@ -24,6 +24,10 @@ func (s *SafeList) Back() *list.Element {
 	return s.data.Back()
 }
 
+func (s *SafeList) Len() int {
+	return s.data.Len()
+}
+
 func (s *SafeList) PushFront(v interface{}) *list.Element {
 	s.lock.Lock()
 	defer s.lock.Unlock()
